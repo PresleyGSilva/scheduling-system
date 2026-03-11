@@ -13,6 +13,14 @@ const getGoogleAuth = () => {
   });
 };
 
+app.get('/', (req, res) => {
+  res.json({
+    status: 'success',
+    message: 'Scheduling API is up and running natively on Render!',
+    version: '1.0.0'
+  });
+});
+
 app.get('/api/availability', async (req, res) => {
   try {
     const { date, timezone = 'UTC' } = req.query;
